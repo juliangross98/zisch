@@ -28,11 +28,11 @@ Softdrinks einchecken wie bei Untappd: Barcode scannen, mit 0 bis 5 Kronkorken b
    | Name | Wert | Pflicht |
    |---|---|---|
    | `INVITE_CODE` | ein Code eurer Wahl, z. B. `sprudel-2026` | ja |
-   | `ZISCH_PORT` | Port auf dem Server, Standard `8085` | nein |
+   | `ZISCH_PORT` | Port auf dem Server, Standard `8098` | nein |
 
 8. **Deploy the stack**. Der erste Build dauert ein bis zwei Minuten.
 
-Danach läuft Zisch unter `http://<server-ip>:8085`.
+Danach läuft Zisch unter `http://<server-ip>:8098`.
 
 ### 2. Nginx Proxy Manager (HTTPS)
 
@@ -42,7 +42,7 @@ Die Live-Kamera funktioniert im Browser nur über HTTPS. So richtest du es ein:
 2. Domain Names: z. B. `zisch.deine-domain.de`
 3. Scheme: `http`
 4. Forward Hostname / IP: die IP deines Servers (oder `zisch`, wenn NPM im selben Docker-Netzwerk hängt, dann Port `3000`)
-5. Forward Port: `8085`
+5. Forward Port: `8098`
 6. **Block Common Exploits** einschalten
 7. Reiter **SSL**: „Request a new SSL Certificate“, **Force SSL** und **HTTP/2 Support** einschalten
 8. Speichern
@@ -78,7 +78,7 @@ docker run --rm -v zisch_zisch-data:/data -v "$PWD":/backup alpine \
 | Variable | Standard | Bedeutung |
 |---|---|---|
 | `INVITE_CODE` | – | Code zum Registrieren. Ohne Code kann sich nur das allererste Konto anlegen. |
-| `ZISCH_PORT` | `8085` | Port auf dem Server |
+| `ZISCH_PORT` | `8098` | Port auf dem Server |
 | `OPENFOODFACTS` | `true` | Unbekannte Barcodes bei Open Food Facts nachschlagen |
 | `COOKIE_SECURE` | `auto` | `auto` erkennt HTTPS über den Proxy. `true` erzwingt sichere Cookies. |
 | `TRUST_PROXY` | `true` | Proxy-Header (`X-Forwarded-*`) auswerten, passt für Nginx Proxy Manager |
