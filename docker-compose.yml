@@ -1,0 +1,19 @@
+services:
+  zisch:
+    build: .
+    image: zisch:latest
+    container_name: zisch
+    restart: unless-stopped
+    environment:
+      # Pflicht: Code, den Freunde zum Registrieren brauchen. In Portainer unter "Environment variables" setzen.
+      INVITE_CODE: ${INVITE_CODE:?Bitte INVITE_CODE in Portainer setzen}
+      TZ: Europe/Berlin
+      # Unbekannte Barcodes bei Open Food Facts nachschlagen (true/false)
+      OPENFOODFACTS: ${OPENFOODFACTS:-true}
+    ports:
+      - "${ZISCH_PORT:-8085}:3000"
+    volumes:
+      - zisch-data:/data
+
+volumes:
+  zisch-data:

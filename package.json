@@ -1,0 +1,19 @@
+{
+  "name": "zisch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Softdrinks einchecken, bewerten und Barcodes scannen. Selbst gehostet.",
+  "type": "module",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/server.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@fontsource/figtree": "^5.0.0",
+    "@fontsource/ibm-plex-mono": "^5.0.0",
+    "@fontsource/shrikhand": "^5.0.0",
+    "@zxing/library": "^0.21.0"
+  }
+}

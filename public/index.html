@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zisch</title>
+<meta name="description" content="Softdrinks einchecken, mit Kronkorken bewerten, Barcodes scannen.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#112420" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zisch">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/shrikhand-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="anon">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-cap" viewBox="0 0 24 24"><polygon id="cap-poly" fill="currentColor"/><circle cx="12" cy="12" r="7.7" fill="#fff" fill-opacity=".2"/><circle cx="12" cy="12" r="7.7" fill="none" stroke="#000" stroke-opacity=".14" stroke-width=".7"/></symbol></defs></svg>
+
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-in">
+      <button class="logo" id="logo" aria-label="Zisch, zum Feed">Zisch<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><circle cx="4" cy="14" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="7" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="13.5" cy="2" r="1.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <nav class="topnav" aria-label="Hauptnavigation">
+        <button data-tab="feed">Feed</button>
+        <button data-tab="search">Suchen</button>
+        <button data-tab="top">Bestenliste</button>
+        <button data-tab="profile">Profil</button>
+      </nav>
+      <div class="top-actions">
+        <button class="btn btn-primary btn-sm top-scan" id="top-scan"></button>
+        <button class="me-btn" id="me-btn" aria-label="Mein Profil"></button>
+      </div>
+    </div>
+  </header>
+  <main id="view" aria-live="polite"></main>
+  <nav class="tabbar" aria-label="Navigation">
+    <div class="tabbar-in">
+      <button class="tab" data-tab="feed"></button>
+      <button class="tab" data-tab="search"></button>
+      <button class="fab" id="fab" aria-label="Barcode scannen und einchecken"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cap"/></svg></button>
+      <button class="tab" data-tab="top"></button>
+      <button class="tab" data-tab="profile"></button>
+    </div>
+  </nav>
+</div>
+<div id="sheet-root"></div>
+<div id="snack-root" aria-live="polite"></div>
+<noscript><p style="padding:24px">Zisch braucht JavaScript.</p></noscript>
+<script src="/app.js"></script>
+</body>
+</html>
